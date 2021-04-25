@@ -1,7 +1,7 @@
 import { parseISO } from 'date-fns';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { useRouter } from 'next/router'
+
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -10,7 +10,7 @@ import { api } from '../../services/api';
 import { ptBR } from 'date-fns/locale';
 import { convertDurationToTimeString } from '../../utils/convertDurationToTimeString';
 import styles from './episode.module.scss'
-import { useContext } from 'react';
+
 import { PlayerContext, usePlayer } from '../../contexts/PlayerContext';
 
 
@@ -97,7 +97,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
     return{
         paths,
-        fallback:true
+        fallback:'blocking'
     }
 }
 
